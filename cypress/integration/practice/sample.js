@@ -62,3 +62,10 @@ describe("testing app", () =>{
         cy.url().should('include', '/commands/actions')
     })
 })
+
+describe('ds', () =>{
+    it('fd', () =>{
+        cy.visit()
+        cy.children()
+    })
+})
