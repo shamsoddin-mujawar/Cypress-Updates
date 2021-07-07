@@ -24,6 +24,7 @@ context('Actions', () => {
 
       // Delay each keypress by 0.1 sec
       .type('slow.typing@email.com', { delay: 100 })
+      // hello
       .should('have.value', 'slow.typing@email.com')
 
     cy.get('.action-disabled')
