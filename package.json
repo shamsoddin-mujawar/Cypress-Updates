@@ -9,6 +9,7 @@
   "author": "Shamsoddin Mujawar",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^7.6.0"
+    "cypress": "^7.6.0",
+    "cypress-iframe": "^1.0.1"
   }
 }

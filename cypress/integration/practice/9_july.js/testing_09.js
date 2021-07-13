@@ -6,7 +6,7 @@ describe('Automating Rahulshetty.com', function () {
         cy.get('input.search-keyword').type('ca')
         cy.wait(2000);
 
-        // first way to find lngth of an element
+        // first way to find length of an element
         // cy.get('.product').should('have.length', 4)
         // second way
         cy.get('.product:visible').should('have.length', 4)

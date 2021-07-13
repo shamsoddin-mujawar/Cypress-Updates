@@ -34,5 +34,10 @@ describe('Automating Rahulshetty.com', function () {
             cy.log(logo_name.text())
             cy.log(" arrow function")
         }))
+
+        cy.get('.cart-icon').click()
+        cy.contains('PROCEED TO CHECKOUT').click();
+        cy.contains('Place Order').click();
+
     })
 })
