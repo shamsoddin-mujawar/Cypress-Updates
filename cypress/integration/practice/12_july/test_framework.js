@@ -10,16 +10,16 @@ describe('creating testing framework', function () {
     // "this" is used to accessible for entire file or anywhere in the file.
     // 'this' does not have own binding should not used with arrow function. ()=>{}
 
-    before(function () {
+    before(function() {
         // to resolve  promises fixture() used then() function to resolve itself.
         // store data in fixture/example.json file accessing used inside this file.
 
-         cy.fixture('example').then(function (data) {
+         cy.fixture('example').then(function(data) {
             this.getData = data     // initialize lacal 'data' variable with global variable 'getData'.so you can access any where in this file.
         })
     })
 
-    it.only('hooks',  ()=> {
+    it('hooks',  function() {
 
         cy.get('input[name="name"]:nth-child(2)').type(this.getData.name)  // to identifying that variable used this.getData.name 'name' is an value strore in examle.json file
 
@@ -34,7 +34,8 @@ describe('creating testing framework', function () {
         cy.get('#inlineRadio1').check().should('have.value', 'option1')
     })
 
-    it('validating above things', function () {
+    // this won't work with arrow function.
+    it('validating above things', () => {
 
         // value inserting first text box
         cy.get('input[name="name"]:nth-child(2)').type(this.getData.name)
@@ -54,20 +55,29 @@ describe('creating testing framework', function () {
 
     })
 
-    it('testing other page', function () {
+    it('testing/ add to cart specific element', function () {
+        
         cy.contains('Shop').click()
         cy.log('click on shop nav bar')
         cy.url().should('include', 'shop')
-        cy.get('h4.card-title a').each(($element, $index)=>{
-                const card_text=$element.text()
-                if (card_text.includes('iphone X')){
 
-                    // cy.contains('iphone X').click();
+        // wrote generic method to click specific element.
+        cy.SelectProduct('Samsung Note 8')
+    })
 
-                    // if you got multiple element use eq() then perform operation on it.
-                    cy.get('.card-footer').find('button').eq($index).click();
-                }
+    it.only('adding multiple element into card', function () {
+        cy.contains('Shop').click()
+        cy.log('click on shop nav bar')
+        cy.url().should('include', 'shop')
+
+        //1. in example.json file created 'ProductName" in array store multiple values of product.
+        // forEach is an function used to iterating array element.
+
+        this.getData.ProductName.forEach(function(element){
+            cy.SelectProduct(element)
+            cy.log("adding multiple element into the cart")
         })
+
     })
 
 })
