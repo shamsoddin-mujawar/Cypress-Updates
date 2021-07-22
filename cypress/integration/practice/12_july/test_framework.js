@@ -14,14 +14,9 @@ describe('creating testing framework', function () {
         // to resolve  promises fixture() used then() function to resolve itself.
         // store data in fixture/example.json file accessing used inside this file.
 
-<<<<<<< HEAD
          cy.fixture('example').then(function(data) {
-            this.getData = data     // initialize lacal 'data' variable with global variable 'getData'.so you can access any where in this file.
-=======
-         cy.fixture('example').then(function (data) {
-            this.getData = data     // initialize lacal 'data' variable with  variable 'getData'.so you can access any where in this file.
->>>>>>> 7e9db7611535b7f1a254ec29bd6c62a9fff30178
-        })
+            this.getData = data     // initialize lacal 'data' variable with global variable 'getData'.so you can access any where in this file
+         })
     })
 
     it('hooks',  function() {
