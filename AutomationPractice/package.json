@@ -1,0 +1,18 @@
+{
+  "name": "cypress-practice",
+  "version": "1.0.0",
+  "description": "learning cypress",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "author": "Shamsoddin Mujawar",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.6.0",
+    "cypress-iframe": "^1.0.1"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}
