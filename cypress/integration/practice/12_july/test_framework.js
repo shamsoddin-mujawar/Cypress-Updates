@@ -15,7 +15,11 @@ describe('creating testing framework', function () {
         // store data in fixture/example.json file accessing used inside this file.
 
          cy.fixture('example').then(function(data) {
+<<<<<<< HEAD
             this.getData = data     // initialize lacal 'data' variable with global variable 'getData'.so you can access any where in this file.
+=======
+            this.getData = data     // initialize lacal 'data' variable with global variable 'getData'.so you can access any where in this file
+>>>>>>> f784bd590d808e3acd08ed53b2db44bb0695ae60
          })
     })
 
