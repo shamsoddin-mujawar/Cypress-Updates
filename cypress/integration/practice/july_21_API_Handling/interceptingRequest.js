@@ -1,5 +1,5 @@
 describe(' Intercepting HTTP request details to test Security Scenarios',()=>{
-    it('',()=>{
+    it('Dynamically changing url',()=>{
         cy.visit('https://www.rahulshettyacademy.com/angularAppdemo/')
         // following this syntax:
         // cy.intercept(method, url, routeHandler)
@@ -9,6 +9,7 @@ describe(' Intercepting HTTP request details to test Security Scenarios',()=>{
             // changed the url : purpose to check security
             req.url = 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=malhotra'
 
+            // use to Modifying the real response 
             req.continue((res)=>{
                 // expect(res.statusCode).to.equal(200)
             })

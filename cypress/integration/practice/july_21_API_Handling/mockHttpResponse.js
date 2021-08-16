@@ -10,7 +10,7 @@ describe(' Mock HTTP Responses for generating Stub Data to test edge Scenarios',
         },
         // response
         {
-            // here we mock the response as we want. means change in the respnse data.
+            // here we mock the response as we want. means change in the response data.
             statuscode:200,
             body:[{
                     "book_name":"RestAssured with samir",

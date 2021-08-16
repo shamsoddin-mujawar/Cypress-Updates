@@ -1,7 +1,10 @@
 describe('Testing on rahulshetty.com', () =>{
 
-    it('testing checkbox', ()=>{
+    beforeEach(() => {
         cy.visit('https://www.rahulshettyacademy.com/AutomationPractice/')
+    })
+    it('testing checkbox', ()=>{
+        
 
         // clicking and verifying checkbox or validation/assertion
         // you can compare or assert by value, id ,css,text,String more oprions.
@@ -29,6 +32,7 @@ describe('Testing on rahulshetty.com', () =>{
 
     })
 
+    // recommended
     it('testing dynamic dropdown', ()=>{
         cy.get('#autocomplete').type('ind')
         cy.get('li.ui-menu-item div').each(($element) =>{
@@ -39,6 +43,13 @@ describe('Testing on rahulshetty.com', () =>{
         // validation to check if it india is selected or not
         // adding assertion putted value in should command must be the same
         cy.get('#autocomplete').should('have.value', 'India')
+    })
+
+    // not recommended just for practice
+    it.only('dynamic dropdown clicking value by index',()=>{
+        cy.get('#autocomplete').type('ind')
+        // index starting from 0 as '1'.
+        cy.get('ul>li.ui-menu-item').eq(1).click()
     })
 
     it('testing visibility of an element', ()=>{
